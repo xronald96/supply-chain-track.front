@@ -3,6 +3,7 @@ import { getItemEvents, getLastEvent } from "./services/itemService";
 import ItemForm from "./components/ItemForm";
 import EventList from "./components/EventList";
 import LastEvent from "./components/LastEvent";
+import AddEventForm from "./components/AddEventForm";
 
 const Home: React.FC = () => {
   const [itemId, setItemId] = useState<string>("");
@@ -37,6 +38,10 @@ const Home: React.FC = () => {
     }
   };
 
+  const handleEventAdded = () => {
+    handleGetItemEvents();
+  };
+
   return (
     <div>
       <h1>Supply Chain Tracker</h1>
@@ -67,6 +72,8 @@ const Home: React.FC = () => {
         {loading && <p>Loading...</p>}
         <LastEvent lastEvent={lastEvent} />
       </div>
+
+      <AddEventForm itemId={itemId} onEventAdded={handleEventAdded} />
 
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
