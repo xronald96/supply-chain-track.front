@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { getItemEvents, getLastEvent } from "./services/itemService";
-import ItemForm from "./components/ItemForm";
-import EventList from "./components/EventList";
-import LastEvent from "./components/LastEvent";
-import AddEventForm from "./components/AddEventForm";
+import ItemForm from "./components/ItemForm/ItemForm";
+import EventList from "./components/EventList/EventList";
+import LastEvent from "./components/LastEvent/LastEvent";
+import AddEventForm from "./components/AddEventForm/AddEventForm";
 
 const Home: React.FC = () => {
   const [itemId, setItemId] = useState<string>("");

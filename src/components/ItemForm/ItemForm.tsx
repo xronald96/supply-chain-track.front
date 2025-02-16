@@ -1,7 +1,7 @@
 // src/components/ItemForm.tsx
 import React from "react";
 import { useForm } from "react-hook-form";
-import { createItem, updateItem } from "../services/itemService";
+import { createItem, updateItem } from "../../services/itemService";
 
 interface ItemFormProps {
   isUpdating?: boolean;
@@ -30,8 +30,8 @@ const ItemForm: React.FC<ItemFormProps> = ({
       } else {
         await createItem(data.name, data.color, data.price);
       }
-      reset(); // Reset form after submit
-      if (onItemCreated) onItemCreated(); // Callback to refresh data
+      reset(); 
+      if (onItemCreated) onItemCreated(); 
     } catch (err) {
       console.error("Error saving item", err);
     }

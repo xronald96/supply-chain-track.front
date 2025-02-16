@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { addEvent } from "../services/eventService";
+import { addEvent } from "../../services/eventService";
 
 interface AddEventFormProps {
   itemId: string;
